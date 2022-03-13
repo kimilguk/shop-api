@@ -23,6 +23,11 @@ repositories {
     mavenCentral()
 }
 
+//코틀린 테스트를 JUnit 으로 사용하기
+test {
+    useJUnitPlatform()
+}
+
 dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib"
     //스프링부트에 웹관련 모듈 추가(아래)
@@ -37,4 +42,6 @@ dependencies {
     runtimeOnly 'com.h2database:h2'
     //postgreSQL 클라우드용 데이터베이스 사용 모듈 추가(아래)
     runtimeOnly 'org.postgresql:postgresql'
+    //코틀린에서 JUnit 테스트 플러그인 추가(아래)
+    testImplementation 'io.kotlintest:kotlintest-runner-junit5:3.3.0'
 }
