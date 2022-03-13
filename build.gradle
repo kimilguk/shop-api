@@ -1,0 +1,40 @@
+plugins {
+    id 'org.jetbrains.kotlin.jvm' version '1.5.10'
+    //스프링부트 플러그인 추가(아래)
+    id 'org.springframework.boot' version '2.4.9'
+    //코틀린에서 클래스 상속에 필요한 open 키워드 사용 생략가능 플러그인 추가(아래 반드시 큰따움표로...)
+    id "org.jetbrains.kotlin.plugin.spring" version "1.4.32"
+    //코틀린에서 JPA 엔티티 클래스 사용가능 플러그인 추가(아래)
+    id 'org.jetbrains.kotlin.plugin.jpa' version '1.4.32'
+}
+
+//모든 스프링부트 의존성 모듈에 버전 생략 플러그인 추가(아래)
+apply plugin: 'io.spring.dependency-management'
+
+group 'org.kimilguk'
+version '1.0-SNAPSHOT'
+
+//모든 엔티티 클래스를 상속가능한 클래스로 만들기(아래)
+allOpen {
+    annotation("javax.persistence.Entity")
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation "org.jetbrains.kotlin:kotlin-stdlib"
+    //스프링부트에 웹관련 모듈 추가(아래)
+    implementation "org.springframework.boot:spring-boot-starter-web"
+    //스프링부트에 jdbc 데이터베이스 커넥션 모듈 추가(아래)
+    implementation "org.springframework.boot:spring-boot-starter-jdbc"
+    //스프링부트에 jpa 레포지토리(CRUD 메소드) 모듈 추가(아래)
+    implementation "org.springframework.boot:spring-boot-starter-data-jpa"
+    //코틀린의 실행 시점에 컴파일러 내부 구조를 분석할 수 있는 리플렉션(반사)기능 모듈 추가(아래)
+    implementation "org.jetbrains.kotlin:kotlin-reflect"
+    //h2 메모리 데이터베이스 사용 모듈 추가(아래)
+    runtimeOnly 'com.h2database:h2'
+    //postgreSQL 클라우드용 데이터베이스 사용 모듈 추가(아래)
+    runtimeOnly 'org.postgresql:postgresql'
+}
