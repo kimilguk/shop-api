@@ -14,7 +14,7 @@
 - 개발툴: 인텔리J 커뮤니티, 빌드툴버전: 그래들7.1, 스프링부트버전: 2.4.9, 자바버전: 오픈 JDK8, 코틀린 1.5.10
 - 사용된 기술: 하이버네이트 스프링 JPA, H2(메모리) postgreSQL(RDBS) 데이터베이스, HikariPool(스프링부트에 내장된 기본 DB 커넥션), 스프링 시큐리티(DB) + OAuth2(네이버외부API) + 스프링세션
 - 구현1: 코틀린 JUnit 테스트, Hello 코틀린 RestAPI 출력, 공통 에러 처리
-- 구현2: 
+- 구현2: application.yml 야물 설정파일에서 h2 메모리 DB 사용 추가 후 http://localhost:8080/h2-console 접속가능
 - 구현3: 
 - 구현4: 
 - 구현5: 

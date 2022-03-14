@@ -36,7 +36,7 @@ dependencies {
     implementation "org.springframework.boot:spring-boot-starter-jdbc"
     //스프링부트에 jpa 레포지토리(CRUD 메소드) 모듈 추가(아래)
     implementation "org.springframework.boot:spring-boot-starter-data-jpa"
-    //코틀린의 실행 시점에 컴파일러 내부 구조를 분석할 수 있는 리플렉션(반사)기능 모듈 추가(아래)
+    //코틀린 클래스를 JVM(자바클래스)에서 실행 시 Kclass를 자바클래스로 리플렉션(반사,참조)하는 모듈 추가(아래)
     implementation "org.jetbrains.kotlin:kotlin-reflect"
     //h2 메모리 데이터베이스 사용 모듈 추가(아래)
     runtimeOnly 'com.h2database:h2'

@@ -1,0 +1,18 @@
+# resources 폴더에 application.properties 또는 .yml 야물 파일은 자동으로 설정파일로 인식한다.
+spring:
+  # H2 메모리 데이터베이스인 testdb 를 생성하는 코딩
+  datasource:
+    url: jdbc:h2:mem:testdb;MODE=MYSQL
+    username: sa
+    password:
+    driver-class-name: org.h2.Driver
+  # H2 콘솔 웹 사이트 사용(아래)
+  h2:
+    console:
+      enabled: true
+  # JPA 에서 엔티티 클래스의 테이블 자동생성(기존테이블지우기) 및 쿼리 내용 보이기 옵션(아래)
+  jpa:
+    hibernate:
+      ddl-auth: create-drop
+    database-platform: org.hibernate.dialect.H2Dialect
+    show_sql: true
