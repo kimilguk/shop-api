@@ -44,4 +44,6 @@ dependencies {
     runtimeOnly 'org.postgresql:postgresql'
     //코틀린에서 JUnit 테스트 플러그인 추가(아래)
     testImplementation 'io.kotlintest:kotlintest-runner-junit5:3.3.0'
+    //회원등록시 암호를 BCrypt 모듈로 암호화(아래)
+    implementation "org.mindrot:jbcrypt:0.4"
 }
