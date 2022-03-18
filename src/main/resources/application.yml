@@ -16,3 +16,9 @@ spring:
       ddl-auth: create-drop
     database-platform: org.hibernate.dialect.H2Dialect
     show_sql: true
+# JPA 쿼리 파라미터 값 보이기(아래)
+logging:
+  level:
+    org:
+      hibernate:
+        type: trace

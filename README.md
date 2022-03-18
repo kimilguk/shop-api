@@ -16,9 +16,12 @@
 - 사용된 기술: 하이버네이트 스프링 JPA, H2(메모리) postgreSQL(RDBS) 데이터베이스, HikariPool(스프링부트에 내장된 기본 DB 커넥션), 스프링 시큐리티(DB) + OAuth2(네이버외부API) + 스프링세션
 - 구현1: 코틀린 JUnit 테스트, Hello 코틀린 RestAPI 출력, 공통 에러 처리
 - 구현2: application.yml 야물 설정파일에서 h2 메모리 DB 사용 추가 후 http://localhost:8080/h2-console 접속가능
-- 구현3: 회원가입 API 코딩 추가
+- 구현3: 회원가입 API 코딩 순서 도메인,JPA@레포지토리-Dto클래스-@서비스클래스-@Rest컨트롤러클래스
 - 구현4: 
 - 구현5: 
+
+### 20220318(금)
+- Dto, Service, Controller 코딩
 
 ### 20220317(목)
 - 회원가입에 필요한 JPA용 @Entity 클래스 추가: Users 

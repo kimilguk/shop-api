@@ -3,7 +3,7 @@ package org.kimilguk.shop.service.users
 import org.kimilguk.shop.common.ShopException
 import org.kimilguk.shop.domain.users.Users
 import org.kimilguk.shop.domain.users.UsersRepository
-import org.kimilguk.shop.web.users.SignupDto
+import org.kimilguk.shop.dto.users.SignupDto
 import org.mindrot.jbcrypt.BCrypt
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.stereotype.Service
