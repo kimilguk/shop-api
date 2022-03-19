@@ -17,8 +17,16 @@
 - 구현1: 코틀린 JUnit 테스트, Hello 코틀린 RestAPI 출력, 공통 에러 처리
 - 구현2: application.yml 야물 설정파일에서 h2 메모리 DB 사용 추가 후 http://localhost:8080/h2-console 접속가능
 - 구현3: 회원가입 API 코딩 순서 도메인,JPA@레포지토리-Dto클래스-@서비스클래스-@Rest컨트롤러클래스
-- 구현4: 
+- 구현4: 회원로그인 API 추가: 토큰 발행 클래스 추가
 - 구현5: 
+
+### 20220319(토)
+- Json Web Token 토큰발행: com.auth0:java-jwt:3.8.1 의존모듈 추가
+- 인증에 필요한 토큰과 리프레시용 토큰을 생성하는 object 싱글톤(프로그램에서 1회만 생성) 클래스 JWTUtil.kt
+- JWT 로 회원 인증 데이터 요청 시 임시 저장할 데이터 SigninRequestDto 클래스
+- JWT 에서 회원 인증 데이터 발행 시 임시 저장할 데이터 SigninResponseDto 클래스
+- JWT 를 사용한 로그인 로직 서비스 구현 SigninService 클래스
+- 로그인 API 외부 접근 경로 SigninApiController 클래스
 
 ### 20220318(금)
 - Dto, Service, Controller 코딩

@@ -12,8 +12,8 @@ import org.springframework.stereotype.Service
  * 회원가입 서비스 로직 함수를 제공하는 클래스
  */
 @Service
-class SignupService @Autowired constructor(//생성자 매개변수를 지정해서 외부 클래스를 주입받는다.
-    private val usersRepository: UsersRepository //CRUD 담당 외부 레포지토리 객체생성(주입)
+class SignupService @Autowired constructor(//생성자함수는 클래스를 초기화하는 기능
+    private val usersRepository: UsersRepository //val 타입으로 new 키워드 대신 객체 생성(DI 주입) //CRUD 담당 외부 레포지토리 객체생성(주입)
 ) {
     fun signup(request: SignupDto) {
         validateRequest(request)//전송데이터 이메일, 이름, 암호 유효성검사

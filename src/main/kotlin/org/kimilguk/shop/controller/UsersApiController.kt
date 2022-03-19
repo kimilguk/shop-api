@@ -14,8 +14,8 @@ import org.springframework.web.bind.annotation.RestController
  */
 @RequestMapping("/api")//초기 외부 접근 경로
 @RestController
-class UsersApiController  @Autowired constructor(
-    private val signupService: SignupService //생성자로 초기 객체 생성(DI 주입)
+class UsersApiController  @Autowired constructor(//생성자함수는 클래스를 초기화하는 기능
+    private val signupService: SignupService //val 타입으로 new 키워드 대신 객체 생성(DI 주입)
 ){
     @PostMapping("/users")//HTTP 의 POST 메소드 전송상태로 접근하는 액션 처리
     fun signup(@RequestBody request: SignupDto) = //return 대신 = 사용해서 반환값 사용

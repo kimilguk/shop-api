@@ -6,9 +6,10 @@ import javax.persistence.*
 /**
  * 회원가입에 필요한 JPA용 @Entity 클래스, JPA 구현 하이버네이트가 자동으로 테이블을 생성시켜줌
  */
-@Entity
+@Entity //(name = "users") //테이블명 생략가능
 class Users( //생성자 매개변수를 지정해서 null 을 허용하지 않는 필수 값으로(기본)으로 지정
-    var email: String,
+    var email: String,//상용 서비스에서는 테이블 생성 후 아래와 같은 DDL 명령어로 인덱스를 생성해야 검색 속도가 향상
+    //create index users_idx_01 on users (email);
     var password: String,
     var name: String
 ) {

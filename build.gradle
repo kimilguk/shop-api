@@ -46,4 +46,6 @@ dependencies {
     testImplementation 'io.kotlintest:kotlintest-runner-junit5:3.3.0'
     //회원등록시 암호를 BCrypt 모듈로 암호화(아래)
     implementation "org.mindrot:jbcrypt:0.4"
+    //Json Web Token 인증토큰발행 모듈 추가(아래)
+    implementation 'com.auth0:java-jwt:3.8.1'
 }
