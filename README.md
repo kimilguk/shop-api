@@ -20,6 +20,14 @@
 - 구현4: 회원로그인 API 추가: 토큰 발행 클래스 추가
 - 구현5: 
 
+### 20220321(월)
+- 회원로그인 API 암호 체크부분 수정: BCrypt.checkpw(비암호, DB암호).not() 추가
+```java
+if(BCrypt.checkpw(signinRequestDto.password, user.password).not()) {
+      throw ShopException("API에서 암호가 일치하지 않습니다.")
+  }
+```
+
 ### 20220319(토)
 - Json Web Token 토큰발행: com.auth0:java-jwt:3.8.1 의존모듈 추가
 - 인증에 필요한 토큰과 리프레시용 토큰을 생성하는 object 싱글톤(프로그램에서 1회만 생성) 클래스 JWTUtil.kt
