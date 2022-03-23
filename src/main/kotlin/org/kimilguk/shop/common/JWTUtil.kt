@@ -2,6 +2,7 @@ package org.kimilguk.shop.common
 
 import com.auth0.jwt.JWT
 import com.auth0.jwt.algorithms.Algorithm
+import com.auth0.jwt.interfaces.DecodedJWT
 import java.util.*
 
 /**
@@ -36,4 +37,17 @@ object JWTUtil {
     object JWTClaims {
         const val EMAIL = "email"
     }
+    //authHolderService 인증값 저장 전에 JWT 토큰값 검증과 이메일을 추출하는 코드
+    fun verify(token: String): DecodedJWT = //토큰값 검증 함수
+        JWT.require(algorithm)
+            .withIssuer(ISSUER)
+            .build()
+            .verify(token)
+    fun verifyRefresh(token: String): DecodedJWT = //재생 토큰값 검증 함수
+        JWT.require(refreshAlgorithm)
+            .withIssuer(ISSUER)
+            .build()
+            .verify(token)
+    fun extractEmail(jwt: DecodedJWT): String =
+        jwt.getClaim(JWTClaims.EMAIL).asString() //로그인 시 생성된 토큰에서 이메일 반환
 }
