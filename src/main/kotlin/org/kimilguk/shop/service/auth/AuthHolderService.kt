@@ -2,10 +2,12 @@ package org.kimilguk.shop.service.auth
 
 import org.kimilguk.shop.domain.users.UsersRepository
 import org.springframework.beans.factory.annotation.Autowired
+import org.springframework.stereotype.Service
 
 /**
  * 서버세션의 사용자정보 대신에 클라이언트에서 보낸 토큰정보로 서버의 ThreadLocal 클래스에서 로그인 정보를 유지한다.
  */
+@Service //스프링빈으로 사용하도록 명시
 class AuthHolderService @Autowired constructor(
     private val usersRepository: UsersRepository
 ) {

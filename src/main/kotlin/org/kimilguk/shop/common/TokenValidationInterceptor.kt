@@ -3,6 +3,7 @@ package org.kimilguk.shop.common
 import org.kimilguk.shop.service.auth.AuthHolderService
 import org.slf4j.LoggerFactory
 import org.springframework.beans.factory.annotation.Autowired
+import org.springframework.stereotype.Component
 import org.springframework.web.servlet.HandlerInterceptor
 import org.springframework.web.servlet.ModelAndView
 import javax.servlet.http.HttpServletRequest
@@ -13,6 +14,7 @@ import javax.servlet.http.HttpServletResponse
  * ThreadLocal 클래스에 저장해서 세션대신 로그인 정보를 유지하게 처리한다.
  * 이 인터셉터 클래스의 실행은 설정클래스에 등록해서 실행한다.
  */
+@Component //스프링빈으로 사용 한다고 명시.
 class TokenValidationInterceptor @Autowired constructor(
     private val authHolderService: AuthHolderService
 ) : HandlerInterceptor {
@@ -35,7 +37,7 @@ class TokenValidationInterceptor @Autowired constructor(
         val authHeader = request.getHeader(AUTHORIZATION) //안드로이드 앱 요청에 포함된 헤더의 Authorization 값을 반환 한다.
         if(authHeader.isNullOrBlank()) {
             val pair = request.method to request.servletPath
-            if(DEFAULT_ALLOWED_API_URLS.contains(pair)) {
+            if(!DEFAULT_ALLOWED_API_URLS.contains(pair)) {
                 response.sendError(401)
                 return false
             }

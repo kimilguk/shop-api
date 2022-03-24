@@ -3,6 +3,7 @@ package org.kimilguk.shop.config
 import org.kimilguk.shop.common.TokenValidationInterceptor
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.context.annotation.Configuration
+import org.springframework.web.servlet.config.annotation.InterceptorRegistration
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer
 
@@ -15,7 +16,10 @@ class WebConfig @Autowired constructor(
 ) : WebMvcConfigurer {
     override fun addInterceptors(registry: InterceptorRegistry) {
         super.addInterceptors(registry) //생략해도 된다.
+        //체인함수를 사용하지 않는다면(아래)
+        //val reg1: InterceptorRegistration = registry.addInterceptor(tokenValidationInterceptor);
+        //reg1.addPathPatterns("/api/**");
         registry.addInterceptor(tokenValidationInterceptor) //.으로 이어지는 함수를 체인함수라고 한다.
-            .addPathPatterns("/api/**") //지정된 패턴에서 인터셉터 클래스가 콜백 자동실행 된다.
+            .addPathPatterns("/api/**")//지정된 패턴에서 인터셉터 클래스가 콜백 자동실행 된다.
     }
 }
