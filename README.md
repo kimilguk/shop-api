@@ -20,7 +20,13 @@
 - 구현4: 회원로그인 API 추가: 토큰 발행 클래스 추가
 - 구현5: 
 
-### 20220324(목) 상품등록 API 추가 순서(아래)
+### 20220328(월) 상품등록 API 추가2 순서(아래)
+- ProductRequestDto.kt: 서비스에서 상품 등록요청 시 전송내용이 임시 저장될 데이터 클래스
+- ProductCreateService.kt: 상품등록 서비스 로직 함수를 제공하는 클래스
+- ProductApiController.kt: 상품등록을 외부에서 접근해는 통로인 RestAPI 클래스
+- 부메랑으로 상품입력 테스트: 토큰값은 필수로 사용한다.
+
+### 20220324(목) 상품등록 API 추가1 순서(아래)
 - Product.kt 추가: 상품등록에 필요한 JPA용 @Entity 클래스(ProductStatus,BaseEntity 추가)
 - ProductRepository.kt 추가:위 product 테이블에 CRUD 쿼리를 실행하는 레포지토리 인터페이스
 
