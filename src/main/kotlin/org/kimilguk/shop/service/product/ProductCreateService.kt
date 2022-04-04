@@ -11,7 +11,7 @@ import org.springframework.stereotype.Service
 import kotlin.reflect.KFunction1
 
 /**
- * 상품등록 서비스 로직 함수를 제공하는 클래스
+ * 상품등록 서비스 로직 함수를 제공하는 서비스로직 클래스
  */
 @Service
 class ProductCreateService @Autowired constructor(//생성자함수는 클래스를 초기화하는 기능

@@ -20,12 +20,17 @@
 - 구현4: 회원로그인 API 추가: 토큰 발행 클래스 추가
 - 구현5: 
 
-### 20220404(월) 상품 리스트 API 작업예정
+### 20220404(월) 상품 리스트 API 작업
+- 안드로이드앱의 스크롤 이벤트를 염두에 두고 스프링부트 페이징 구현
+- ProductListRequestDto.kt 추가: 서비스에서 상품 목록출력 시 전송내용이 임시 저장될 데이터 ProductListRequestDto 클래스
+- ProductRepository.kt 수정: 상품정보를 읽어오는 인터페이스 정의(카테고리별, 스크롤시 상품 id 기준 전후)
+- ProductService.kt 추가: 상품목록을 읽어오는 로직 서비스 클래스
+- ProductApiController.kt 수정: API Get 매핑 및 상품목록 서비스를 호출 추가
 
 ### 20220328(월) 상품등록 API 추가2 순서(아래)
-- ProductRequestDto.kt: 서비스에서 상품 등록요청 시 전송내용이 임시 저장될 데이터 클래스
-- ProductCreateService.kt: 상품등록 서비스 로직 함수를 제공하는 클래스
-- ProductApiController.kt: 상품등록을 외부에서 접근해는 통로인 RestAPI 클래스
+- ProductRequestDto.kt 추가: 서비스에서 상품 등록요청 시 전송내용이 임시 저장될 데이터 클래스
+- ProductCreateService.kt 추가: 상품등록 서비스 로직 함수를 제공하는 클래스
+- ProductApiController.kt 추가: 상품등록을 외부에서 접근해는 통로인 RestAPI 클래스
 - 부메랑으로 상품입력 테스트: 토큰값은 필수로 사용한다.
 
 ### 20220324(목) 상품등록 API 추가1 순서(아래)

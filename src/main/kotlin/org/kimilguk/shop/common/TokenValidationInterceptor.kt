@@ -29,7 +29,7 @@ class TokenValidationInterceptor @Autowired constructor(
         private val DEFAULT_ALLOWED_API_URLS = listOf( //토큰없이 사용할 수 있는 접근허용 URL 등록
             "POST" to "/api/signin",
             "POST" to "/api/users"
-        ) //스프링 시큐리티 대신 사용
+        ) //스프링 시큐리티 대신 사용 "GET" to "/api/products"
     }
 
     //요청처리 전에 호출(실행)
